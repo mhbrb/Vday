@@ -1,0 +1,89 @@
+body {
+    background-color: #fadadd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.instruction {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    color: #ff6699;
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    text-align: center;
+    font-style: italic; /* Making the instruction text italic */
+}
+
+#heartContainer {
+    position: absolute;
+    top: 45%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    cursor: pointer;
+    animation: beat 1s infinite;
+}
+
+#envelopeContainer {
+    display: none; /* Initially hidden, shown after heart is clicked */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem; /* Ensures the envelope icon size matches the heart */
+}
+
+.centering-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#envelope {
+    animation: none; /* Initially no animation, will be added by JS */
+}
+
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes beat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+#messageContainer {
+    display: none;
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    max-width: 600px;
+    padding: 20px;
+    margin: 20px auto;
+    border: 1px solid #ffcccc;
+    border-radius: 8px;
+    background-color: #fff0f0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #333;
+}
+
+.paper p {
+    margin: 0 0 1em;
+    line-height: 1.2;
+}
